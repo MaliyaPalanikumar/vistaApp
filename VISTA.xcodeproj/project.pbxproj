@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A1A19652B5EC99811009F55 /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B64F7926B22241ECF4E9865 /* CameraManager.swift */; };
+		571A4AB61B2EF2C53F746571 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2D8C904C1DCED0AD9F3451 /* CameraView.swift */; };
 		A507F12130398B75001ADE25 /* VISTAApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A507F12030398B75001ADE25 /* VISTAApp.swift */; };
 		A507F12330398B75001ADE25 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A507F12230398B75001ADE25 /* ContentView.swift */; };
 		A507F12530398B79001ADE25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A507F12430398B79001ADE25 /* Assets.xcassets */; };
@@ -34,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B64F7926B22241ECF4E9865 /* CameraManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraManager.swift; sourceTree = "<group>"; };
 		A507F11D30398B75001ADE25 /* VISTA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VISTA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A507F12030398B75001ADE25 /* VISTAApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VISTAApp.swift; sourceTree = "<group>"; };
 		A507F12230398B75001ADE25 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -44,6 +47,7 @@
 		A507F13730398B79001ADE25 /* VISTAUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VISTAUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A507F13B30398B79001ADE25 /* VISTAUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VISTAUITests.swift; sourceTree = "<group>"; };
 		A507F13D30398B79001ADE25 /* VISTAUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VISTAUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		AC2D8C904C1DCED0AD9F3451 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,8 @@
 			children = (
 				A507F12030398B75001ADE25 /* VISTAApp.swift */,
 				A507F12230398B75001ADE25 /* ContentView.swift */,
+				0B64F7926B22241ECF4E9865 /* CameraManager.swift */,
+				AC2D8C904C1DCED0AD9F3451 /* CameraView.swift */,
 				A507F12430398B79001ADE25 /* Assets.xcassets */,
 				A507F12630398B79001ADE25 /* Preview Content */,
 			);
@@ -259,6 +265,8 @@
 			files = (
 				A507F12330398B75001ADE25 /* ContentView.swift in Sources */,
 				A507F12130398B75001ADE25 /* VISTAApp.swift in Sources */,
+				1A1A19652B5EC99811009F55 /* CameraManager.swift in Sources */,
+				571A4AB61B2EF2C53F746571 /* CameraView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,8 +430,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"VISTA/Preview Content\"";
+				DEVELOPMENT_TEAM = PN28R5RYZ9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "VISTA uses the camera to detect traffic signs in real time.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -450,8 +460,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"VISTA/Preview Content\"";
+				DEVELOPMENT_TEAM = PN28R5RYZ9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "VISTA uses the camera to detect traffic signs in real time.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
