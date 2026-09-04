@@ -16,6 +16,11 @@
 		A507F13230398B79001ADE25 /* VISTATests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A507F13130398B79001ADE25 /* VISTATests.swift */; };
 		A507F13C30398B79001ADE25 /* VISTAUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A507F13B30398B79001ADE25 /* VISTAUITests.swift */; };
 		A507F13E30398B79001ADE25 /* VISTAUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A507F13D30398B79001ADE25 /* VISTAUITestsLaunchTests.swift */; };
+		A595A889304A9F36002940C9 /* MobileNetV2.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = A595A888304A9F36002940C9 /* MobileNetV2.mlpackage */; };
+		489F0770A2861C7A3F5FF2D1 /* TrafficSignDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6013A3B893776EB1F24C22 /* TrafficSignDetection.swift */; };
+		53F921F3EB08671E79C681B1 /* TrafficSignClassifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5B78A5F55BBEA2C18CF5C9 /* TrafficSignClassifier.swift */; };
+		BDFDC196256977DF5215A0F4 /* DetectionStabilizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29B7883D0BA7FAC8DEA6F2C /* DetectionStabilizer.swift */; };
+		DE987B70D97AC48E18B338A3 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEB0EBB5AE01F3E670BE111 /* ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +52,11 @@
 		A507F13730398B79001ADE25 /* VISTAUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VISTAUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A507F13B30398B79001ADE25 /* VISTAUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VISTAUITests.swift; sourceTree = "<group>"; };
 		A507F13D30398B79001ADE25 /* VISTAUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VISTAUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A595A888304A9F36002940C9 /* MobileNetV2.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; path = MobileNetV2.mlpackage; sourceTree = "<group>"; };
+		DF6013A3B893776EB1F24C22 /* TrafficSignDetection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrafficSignDetection.swift; sourceTree = "<group>"; };
+		5C5B78A5F55BBEA2C18CF5C9 /* TrafficSignClassifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrafficSignClassifier.swift; sourceTree = "<group>"; };
+		A29B7883D0BA7FAC8DEA6F2C /* DetectionStabilizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectionStabilizer.swift; sourceTree = "<group>"; };
+		BDEB0EBB5AE01F3E670BE111 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		AC2D8C904C1DCED0AD9F3451 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -102,7 +112,12 @@
 				A507F12230398B75001ADE25 /* ContentView.swift */,
 				0B64F7926B22241ECF4E9865 /* CameraManager.swift */,
 				AC2D8C904C1DCED0AD9F3451 /* CameraView.swift */,
+				DF6013A3B893776EB1F24C22 /* TrafficSignDetection.swift */,
+				5C5B78A5F55BBEA2C18CF5C9 /* TrafficSignClassifier.swift */,
+				A29B7883D0BA7FAC8DEA6F2C /* DetectionStabilizer.swift */,
+				BDEB0EBB5AE01F3E670BE111 /* ViewModel.swift */,
 				A507F12430398B79001ADE25 /* Assets.xcassets */,
+				A595A888304A9F36002940C9 /* MobileNetV2.mlpackage */,
 				A507F12630398B79001ADE25 /* Preview Content */,
 			);
 			path = VISTA;
@@ -266,7 +281,12 @@
 				A507F12330398B75001ADE25 /* ContentView.swift in Sources */,
 				A507F12130398B75001ADE25 /* VISTAApp.swift in Sources */,
 				1A1A19652B5EC99811009F55 /* CameraManager.swift in Sources */,
+				A595A889304A9F36002940C9 /* MobileNetV2.mlpackage in Sources */,
 				571A4AB61B2EF2C53F746571 /* CameraView.swift in Sources */,
+				489F0770A2861C7A3F5FF2D1 /* TrafficSignDetection.swift in Sources */,
+				53F921F3EB08671E79C681B1 /* TrafficSignClassifier.swift in Sources */,
+				BDFDC196256977DF5215A0F4 /* DetectionStabilizer.swift in Sources */,
+				DE987B70D97AC48E18B338A3 /* ViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

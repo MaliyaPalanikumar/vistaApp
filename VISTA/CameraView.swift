@@ -23,9 +23,10 @@ struct CameraView: View {
                 CameraPreviewView(session: cameraManager.session)
                     .ignoresSafeArea()
 
-                if let error = cameraManager.setupError {
-                    VStack {
-                        Spacer()
+                VStack(spacing: 12) {
+                    Spacer()
+
+                    if let error = cameraManager.setupError {
                         Text(error)
                             .font(.footnote)
                             .foregroundStyle(.white)
@@ -33,9 +34,16 @@ struct CameraView: View {
                             .padding()
                             .background(.black.opacity(0.6), in: RoundedRectangle(cornerRadius: 12))
                             .padding(.horizontal, 24)
-                            .padding(.bottom, 40)
+                    }
+
+                    if let detection = cameraManager.currentDetection {
+                        DetectionBannerView(detection: detection)
+                            .padding(.horizontal, 16)
+                            .transition(.move(edge: .bottom).combined(with: .opacity))
                     }
                 }
+                .padding(.bottom, 24)
+                .animation(.spring(response: 0.35, dampingFraction: 0.85), value: cameraManager.currentDetection)
 
             case .notDetermined:
                 ProgressView("Requesting camera access…")
@@ -95,6 +103,48 @@ private struct CameraPreviewView: UIViewRepresentable {
     }
 }
 
+/// Bottom-of-screen banner showing the most recently detected traffic sign's
+/// name and reference image.
+private struct DetectionBannerView: View {
+    let detection: TrafficSignDetection
+
+    var body: some View {
+        HStack(spacing: 12) {
+            signImage
+                .resizable()
+                .scaledToFit()
+                .frame(width: 44, height: 44)
+                .padding(6)
+                .background(Color.white.opacity(0.15), in: RoundedRectangle(cornerRadius: 10))
+
+            VStack(alignment: .leading, spacing: 2) {
+                Text(detection.name)
+                    .font(.headline)
+                    .foregroundStyle(.white)
+                Text("\(Int(detection.confidence * 100))% confidence")
+                    .font(.caption)
+                    .foregroundStyle(.white.opacity(0.7))
+            }
+
+            Spacer(minLength: 0)
+        }
+        .padding(12)
+        .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 16))
+        .overlay(
+            RoundedRectangle(cornerRadius: 16)
+                .stroke(Color.white.opacity(0.15), lineWidth: 1)
+        )
+        .shadow(color: .black.opacity(0.25), radius: 12, y: 4)
+    }
+
+    private var signImage: Image {
+        if UIImage(named: detection.imageName) != nil {
+            return Image(detection.imageName).resizable()
+        }
+        return Image(systemName: "exclamationmark.triangle.fill")
+    }
+}
+
 private struct CameraPermissionDeniedView: View {
     var body: some View {
         VStack(spacing: 16) {
@@ -117,5 +167,23 @@ private struct CameraPermissionDeniedView: View {
             .buttonStyle(.borderedProminent)
         }
         .padding()
+    }
+}
+
+#Preview {
+    CameraView()
+}
+
+#Preview("Detection Banner") {
+    ZStack {
+        Color.black.ignoresSafeArea()
+        VStack {
+            Spacer()
+            DetectionBannerView(
+                detection: TrafficSignDetection(id: "stop", name: "Stop", confidence: 0.94)
+            )
+            .padding(.horizontal, 16)
+            .padding(.bottom, 24)
+        }
     }
 }

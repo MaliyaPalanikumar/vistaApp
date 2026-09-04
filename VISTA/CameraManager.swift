@@ -15,21 +15,29 @@ enum CameraAuthorizationStatus {
     case restricted
 }
 
-/// Owns the AVCaptureSession for the back camera and exposes live frames
-/// so they can later be fed into the MobileNetV2 model for traffic sign detection.
+/// Owns the AVCaptureSession for the back camera, classifies each frame with
+/// MobileNetV2, and publishes the result via `currentDetection` for the view.
 final class CameraManager: NSObject, ObservableObject {
     @Published var authorizationStatus: CameraAuthorizationStatus = .notDetermined
     @Published var isSessionRunning = false
     @Published var setupError: String?
 
-    let session = AVCaptureSession()
+    /// The most recent classification result, shown in the bottom banner.
+    @Published var currentDetection: TrafficSignDetection?
 
-    /// Called on a background queue for every captured frame. Assign a handler
-    /// to feed frames into a Vision/CoreML pipeline.
-    var onFrameCaptured: ((CMSampleBuffer) -> Void)?
+    let session = AVCaptureSession()
 
     private let sessionQueue = DispatchQueue(label: "com.vista.camera.sessionQueue")
     private let videoOutput = AVCaptureVideoDataOutput()
+    private let viewModel = ViewModel()
+    private let classifier = TrafficSignClassifier()
+    private let stabilizer = DetectionStabilizer()
+
+    /// Only run the model on every Nth frame — CoreML inference on all 30fps
+    /// of camera frames is wasteful and doesn't make classification any more
+    /// stable, since the stabilizer already smooths across samples.
+    private let frameSkipInterval = 3
+    private var frameCounter = 0
 
     override init() {
         super.init()
@@ -146,6 +154,34 @@ final class CameraManager: NSObject, ObservableObject {
 
 extension CameraManager: AVCaptureVideoDataOutputSampleBufferDelegate {
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
-        onFrameCaptured?(sampleBuffer)
+        frameCounter += 1
+        guard frameCounter % frameSkipInterval == 0 else { return }
+
+        guard let image = viewModel.convertCMSampleBufferToImage(sampleBuffer),
+              let modelInput = viewModel.multiArray(from: image) else {
+            return
+        }
+
+        let detection = classifier.classify(modelInput)
+
+        // Snapshot before dispatching — `setupError` is `@Published` and must
+        // only be read/written on the main thread.
+        let classifierError = classifier.lastError
+        DispatchQueue.main.async { [weak self] in
+            self?.setupError = classifierError
+        }
+
+        switch stabilizer.stabilize(detection) {
+        case .show(let stableDetection):
+            DispatchQueue.main.async { [weak self] in
+                self?.currentDetection = stableDetection
+            }
+        case .clear:
+            DispatchQueue.main.async { [weak self] in
+                self?.currentDetection = nil
+            }
+        case .unchanged:
+            break
+        }
     }
 }
