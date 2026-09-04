@@ -7,7 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E566D1ACCDF801FCD8EDA0E /* DetectionStabilizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8E096E519491530F08FE19 /* DetectionStabilizerTests.swift */; };
+		0F73BE66ECA546B196E9B9CD /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82ACC7AED7245495564247AD /* TestHelpers.swift */; };
+		148EDB891D1C49B4D3EF6235 /* ViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA2208E83919FA3C995241F /* ViewModelTests.swift */; };
+		1850157083405224BD3D73CC /* CameraManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0952BEDD180CD34BEE60B83 /* CameraManagerTests.swift */; };
+		188C577A1A16B5A4089E0B61 /* TrafficSignDetectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E12CA15FC788815BEA16DC7 /* TrafficSignDetectionTests.swift */; };
 		1A1A19652B5EC99811009F55 /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B64F7926B22241ECF4E9865 /* CameraManager.swift */; };
+		489F0770A2861C7A3F5FF2D1 /* TrafficSignDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6013A3B893776EB1F24C22 /* TrafficSignDetection.swift */; };
+		53F921F3EB08671E79C681B1 /* TrafficSignClassifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5B78A5F55BBEA2C18CF5C9 /* TrafficSignClassifier.swift */; };
 		571A4AB61B2EF2C53F746571 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC2D8C904C1DCED0AD9F3451 /* CameraView.swift */; };
 		A507F12130398B75001ADE25 /* VISTAApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A507F12030398B75001ADE25 /* VISTAApp.swift */; };
 		A507F12330398B75001ADE25 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A507F12230398B75001ADE25 /* ContentView.swift */; };
@@ -17,9 +24,8 @@
 		A507F13C30398B79001ADE25 /* VISTAUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A507F13B30398B79001ADE25 /* VISTAUITests.swift */; };
 		A507F13E30398B79001ADE25 /* VISTAUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A507F13D30398B79001ADE25 /* VISTAUITestsLaunchTests.swift */; };
 		A595A889304A9F36002940C9 /* MobileNetV2.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = A595A888304A9F36002940C9 /* MobileNetV2.mlpackage */; };
-		489F0770A2861C7A3F5FF2D1 /* TrafficSignDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6013A3B893776EB1F24C22 /* TrafficSignDetection.swift */; };
-		53F921F3EB08671E79C681B1 /* TrafficSignClassifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5B78A5F55BBEA2C18CF5C9 /* TrafficSignClassifier.swift */; };
 		BDFDC196256977DF5215A0F4 /* DetectionStabilizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29B7883D0BA7FAC8DEA6F2C /* DetectionStabilizer.swift */; };
+		D1DC64A90EF04AE5A26A63AF /* TrafficSignClassifierTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C1773C9CC2AB969524C3C7 /* TrafficSignClassifierTests.swift */; };
 		DE987B70D97AC48E18B338A3 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEB0EBB5AE01F3E670BE111 /* ViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +48,12 @@
 
 /* Begin PBXFileReference section */
 		0B64F7926B22241ECF4E9865 /* CameraManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraManager.swift; sourceTree = "<group>"; };
+		0E12CA15FC788815BEA16DC7 /* TrafficSignDetectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrafficSignDetectionTests.swift; sourceTree = "<group>"; };
+		5C5B78A5F55BBEA2C18CF5C9 /* TrafficSignClassifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrafficSignClassifier.swift; sourceTree = "<group>"; };
+		82ACC7AED7245495564247AD /* TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelpers.swift; sourceTree = "<group>"; };
+		8D8E096E519491530F08FE19 /* DetectionStabilizerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectionStabilizerTests.swift; sourceTree = "<group>"; };
+		A0952BEDD180CD34BEE60B83 /* CameraManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraManagerTests.swift; sourceTree = "<group>"; };
+		A29B7883D0BA7FAC8DEA6F2C /* DetectionStabilizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectionStabilizer.swift; sourceTree = "<group>"; };
 		A507F11D30398B75001ADE25 /* VISTA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VISTA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A507F12030398B75001ADE25 /* VISTAApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VISTAApp.swift; sourceTree = "<group>"; };
 		A507F12230398B75001ADE25 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,11 +65,11 @@
 		A507F13B30398B79001ADE25 /* VISTAUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VISTAUITests.swift; sourceTree = "<group>"; };
 		A507F13D30398B79001ADE25 /* VISTAUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VISTAUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A595A888304A9F36002940C9 /* MobileNetV2.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; path = MobileNetV2.mlpackage; sourceTree = "<group>"; };
-		DF6013A3B893776EB1F24C22 /* TrafficSignDetection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrafficSignDetection.swift; sourceTree = "<group>"; };
-		5C5B78A5F55BBEA2C18CF5C9 /* TrafficSignClassifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrafficSignClassifier.swift; sourceTree = "<group>"; };
-		A29B7883D0BA7FAC8DEA6F2C /* DetectionStabilizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectionStabilizer.swift; sourceTree = "<group>"; };
-		BDEB0EBB5AE01F3E670BE111 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		AC2D8C904C1DCED0AD9F3451 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		BDEB0EBB5AE01F3E670BE111 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		DF6013A3B893776EB1F24C22 /* TrafficSignDetection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrafficSignDetection.swift; sourceTree = "<group>"; };
+		F1C1773C9CC2AB969524C3C7 /* TrafficSignClassifierTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrafficSignClassifierTests.swift; sourceTree = "<group>"; };
+		FAA2208E83919FA3C995241F /* ViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +147,12 @@
 			isa = PBXGroup;
 			children = (
 				A507F13130398B79001ADE25 /* VISTATests.swift */,
+				82ACC7AED7245495564247AD /* TestHelpers.swift */,
+				0E12CA15FC788815BEA16DC7 /* TrafficSignDetectionTests.swift */,
+				8D8E096E519491530F08FE19 /* DetectionStabilizerTests.swift */,
+				FAA2208E83919FA3C995241F /* ViewModelTests.swift */,
+				F1C1773C9CC2AB969524C3C7 /* TrafficSignClassifierTests.swift */,
+				A0952BEDD180CD34BEE60B83 /* CameraManagerTests.swift */,
 			);
 			path = VISTATests;
 			sourceTree = "<group>";
@@ -295,6 +313,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				A507F13230398B79001ADE25 /* VISTATests.swift in Sources */,
+				0F73BE66ECA546B196E9B9CD /* TestHelpers.swift in Sources */,
+				188C577A1A16B5A4089E0B61 /* TrafficSignDetectionTests.swift in Sources */,
+				0E566D1ACCDF801FCD8EDA0E /* DetectionStabilizerTests.swift in Sources */,
+				148EDB891D1C49B4D3EF6235 /* ViewModelTests.swift in Sources */,
+				D1DC64A90EF04AE5A26A63AF /* TrafficSignClassifierTests.swift in Sources */,
+				1850157083405224BD3D73CC /* CameraManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -507,8 +531,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PN28R5RYZ9;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
@@ -526,8 +552,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PN28R5RYZ9;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
@@ -546,6 +574,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PN28R5RYZ9;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.aspiremobiledev.VISTAUITests;
@@ -563,6 +592,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PN28R5RYZ9;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.aspiremobiledev.VISTAUITests;
