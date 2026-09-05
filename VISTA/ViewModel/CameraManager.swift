@@ -164,8 +164,6 @@ extension CameraManager: AVCaptureVideoDataOutputSampleBufferDelegate {
 
         let detection = classifier.classify(modelInput)
 
-        // Snapshot before dispatching — `setupError` is `@Published` and must
-        // only be read/written on the main thread.
         let classifierError = classifier.lastError
         DispatchQueue.main.async { [weak self] in
             self?.setupError = classifierError

@@ -11,8 +11,7 @@ import CoreML
 /// turns the raw output into a `TrafficSignDetection` the view can display.
 final class TrafficSignClassifier {
     /// GTSRB class labels in the same order as the model's training data and
-    /// its 43-way softmax output. Order must match `sign_names` in
-    /// notebooks/02_MobileNetV2.ipynb — do not reorder without retraining.
+    
     private static let classLabels = [
         "limit_zone_20", "limit_zone_30", "limit_zone_50", "limit_zone_60", "limit_zone_70",
         "limit_zone_80", "end_of_speed_limit", "limit_zone_100", "limit_zone_120",
@@ -28,9 +27,6 @@ final class TrafficSignClassifier {
 
     private let model: MobileNetV2?
 
-    /// Set whenever loading or prediction fails, so the caller can surface it
-    /// in the UI instead of it being silently lost to the console on-device.
-    /// Cleared on the next successful prediction.
     private(set) var lastError: String?
 
     init() {

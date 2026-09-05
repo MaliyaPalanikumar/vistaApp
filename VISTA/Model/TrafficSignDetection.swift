@@ -13,8 +13,6 @@ struct TrafficSignDetection: Identifiable, Equatable {
     let name: String
     let confidence: Double
 
-    /// Asset catalog image name for this sign class. Falls back to a system
-    /// symbol in the UI when no matching asset has been added yet.
     var imageName: String { id }
 
     init(id: String, name: String, confidence: Double) {
